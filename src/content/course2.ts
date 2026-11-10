@@ -1,11 +1,12 @@
 import { Course, Lesson } from '../types';
+import { shuffleCourse } from './shuffle';
 
 /** Raw template tag: keeps LaTeX backslashes; \` yields a literal backtick for inline code. */
 const r = (s: TemplateStringsArray, ...v: unknown[]) => String.raw(s, ...v).replace(/\\`/g, '`');
 type LessonInput = Omit<Lesson, 'courseId'>;
 const L = (l: LessonInput): Lesson => ({ ...l, courseId: 'course-2' });
 
-export const course2Data: Course = {
+export const course2Data: Course = shuffleCourse({
   id: 'course-2',
   title: 'Reputation, Voting & Normative Games',
   code: 'SMEIA305 · ECUE Multiagent systems',
@@ -980,4 +981,4 @@ Then $S$ is strictly dominant for the supervisor and $H$ is the company's best r
       ]
     }
   ]
-};
+});

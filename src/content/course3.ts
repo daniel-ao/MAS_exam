@@ -1,8 +1,9 @@
 import { Course } from '../types';
+import { shuffleCourse } from './shuffle';
 import { course3ModulesA } from './course3a';
 import { course3ModulesB } from './course3b';
 
-export const course3Data: Course = {
+export const course3Data: Course = shuffleCourse({
   id: 'course-3',
   title: 'Modal Logic, Model Checking & KBE Manipulation',
   code: 'SMEIA305 · ECUE Multiagent systems',
@@ -11,4 +12,4 @@ export const course3Data: Course = {
   ects: 0,
   totalPages: 111,
   modules: [...course3ModulesA, ...course3ModulesB]
-};
+});

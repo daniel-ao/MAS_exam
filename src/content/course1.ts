@@ -1,11 +1,12 @@
 import { Course, Lesson } from '../types';
+import { shuffleCourse } from './shuffle';
 
 /** Raw template tag: keeps LaTeX backslashes; \` yields a literal backtick for inline code. */
 const r = (s: TemplateStringsArray, ...v: unknown[]) => String.raw(s, ...v).replace(/\\`/g, '`');
 type LessonInput = Omit<Lesson, 'courseId'>;
 const L = (l: LessonInput): Lesson => ({ ...l, courseId: 'course-1' });
 
-export const course1Data: Course = {
+export const course1Data: Course = shuffleCourse({
   id: 'course-1',
   title: 'Agents, Architectures & Organizations',
   code: 'SMEIA305 · ECUE Multiagent systems',
@@ -473,7 +474,7 @@ Note how the obstacle belief makes *avoidCollision* the most urgent desire: desi
               type: 'single',
               options: ['(desire, plan, current step, status)', '(name, value, confidence, timestamp)', '(goal, priority, condition)', '(perception, action)'],
               correctAnswers: [0],
-              explanation: 'Slide 34: Intention = a selected desire with an associated plan: (desire, plan, current step, status). The second tuple is a Belief, the third a Desire.',
+              explanation: 'Slide 34: Intention = a selected desire with an associated plan: (desire, plan, current step, status). (name, value, confidence, timestamp) is a Belief and (goal, priority, condition) a Desire.',
               difficulty: 'intermediate',
               sourceSlide: 34
             }
@@ -997,4 +998,4 @@ Practice: an organization for **autonomous taxis during a city marathon**. A goo
       ]
     }
   ]
-};
+});

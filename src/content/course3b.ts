@@ -766,7 +766,7 @@ KBE is sound and complete, expresses manipulation and its strategies, and proves
             type: 'single',
             options: ['⋁_{ψ∈Σ} E_i^d(B_j φ ∧ ψ)', 'B_i ¬φ ∧ ⋁ E_i^d(B_j φ ∧ ¬K_j B_i ¬φ ∧ ψ)', '⋁ E_i^d(E_j^d φ ∧ K_j E_i^d E_j^d φ ∧ ψ)', 'E_i φ'],
             correctAnswers: [0],
-            explanation: 'Slide 16. The second option is the credible lie and the third is coercion.',
+            explanation: 'Slide 16. The formula starting with B_i ¬φ is the credible lie, and the one with K_j E_i^d E_j^d φ is coercion.',
             difficulty: 'foundation',
             sourceSlide: 16
           }

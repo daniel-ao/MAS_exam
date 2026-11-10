@@ -1,6 +1,7 @@
 import { ExamQuestion } from '../types';
+import { shuffleQuestion } from './shuffle';
 
-export const examQuestionsBank: ExamQuestion[] = [
+export const examQuestionsBank: ExamQuestion[] = ([
   // ==================== CHAPTER 1 ====================
   {
     id: 'eq-1-01', courseId: 'course-1', deck: 1, category: 'MAS Fundamentals',
@@ -63,7 +64,7 @@ export const examQuestionsBank: ExamQuestion[] = [
     type: 'single',
     options: ['Accessible, deterministic, dynamic, discrete', 'Inaccessible, non-deterministic, dynamic, continuous', 'Accessible, deterministic, static, discrete', 'Partially accessible, non-deterministic, static, continuous'],
     correctAnswers: [0],
-    explanation: 'Slide 53. The third option is chess; the second is the exploration robot.',
+    explanation: 'Slide 53. “Accessible, deterministic, static, discrete” is chess; “inaccessible, non-deterministic, dynamic, continuous” is the exploration robot.',
     difficulty: 'intermediate', sourceSlide: 53
   },
   {
@@ -210,7 +211,7 @@ export const examQuestionsBank: ExamQuestion[] = [
     type: 'multiple',
     options: ['K_i B_j (p ⇒ q)', 'E_i^d ((K_j p ∨ ¬B_j q) ∧ E_j r)', '(p ∧ B_i)', '¬(p ∨)'],
     correctAnswers: [0, 1],
-    explanation: 'The last two are missing an argument (slides 9–10).',
+    explanation: '(p ∧ B_i) gives B_i no formula and ¬(p ∨) leaves ∨ without its right-hand formula (slides 9–10).',
     difficulty: 'foundation', sourceSlide: 9
   },
   {
@@ -273,7 +274,7 @@ export const examQuestionsBank: ExamQuestion[] = [
     type: 'single',
     options: ['Bp ∧ ¬p', 'Bp ∧ B¬p', 'Bp ∧ ¬BBp', '¬Bp ∧ ¬B¬Bp'],
     correctAnswers: [0],
-    explanation: 'False belief is allowed (no reflexivity). The others contradict D, 4 and 5 respectively, which KD45 validates.',
+    explanation: 'False belief is allowed (no reflexivity). Bp ∧ B¬p contradicts D, Bp ∧ ¬BBp contradicts 4, and ¬Bp ∧ ¬B¬Bp contradicts 5, all valid in KD45.',
     difficulty: 'intermediate', sourceSlide: 2
   },
   {
@@ -341,7 +342,7 @@ export const examQuestionsBank: ExamQuestion[] = [
       'B_i φ ∧ E_i^d B_j φ'
     ],
     correctAnswers: [0],
-    explanation: 'Slide 16. The second is persuasion and the third coercion.',
+    explanation: 'Slide 16. ⋁ E_i^d(B_j φ ∧ ψ) is persuasion and the formula with K_j E_i^d E_j^d φ is coercion.',
     difficulty: 'intermediate', sourceSlide: 16
   },
   {
@@ -362,4 +363,4 @@ export const examQuestionsBank: ExamQuestion[] = [
     explanation: 'V(p) = {w₀, w₁}; w₃ ∉ V(p) and Succ(w₃) = ∅.',
     difficulty: 'intermediate', sourceSlide: 1
   }
-];
+] as ExamQuestion[]).map(shuffleQuestion);
