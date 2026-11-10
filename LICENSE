@@ -1,0 +1,68 @@
+Multi-Agent Systems — Interactive Exam Preparation Platform
+Copyright (c) 2026 Daniel Abou Orm. All rights reserved.
+
+PROPRIETARY LICENSE — USE PERMITTED, COPYING AND DERIVATIVES PROHIBITED
+
+1. DEFINITIONS
+   "Author" means Daniel Abou Orm.
+   "Platform" means this project, including its source code, user interface,
+   visual design, structure, text written by the Author, interactive
+   laboratories, gamification system (including XP, levels, the "Agent
+   Society" map, achievements and module bosses), the "Urgent Study" mode,
+   and the overall concept and organisation of the learning experience.
+   "Hosted Site" means the official deployment of the Platform published by the
+   Author (currently https://daniel-ao.github.io/MAS_exam/).
+
+2. WHAT YOU MAY DO
+   Subject to the terms below, the Author grants you a free, personal,
+   non-exclusive, non-transferable, revocable licence to:
+   a) access and use the Hosted Site for your own personal study and learning;
+   b) view the source code in the public repository for personal reference and
+      for evaluating the Platform;
+   c) run a local copy solely for your own personal, non-commercial study,
+      without publishing, hosting or sharing it;
+   d) share links to the Hosted Site or the repository.
+
+3. WHAT YOU MAY NOT DO
+   Without the Author's prior written permission, you may not:
+   a) copy, reproduce, republish, mirror, re-host or redistribute the Platform
+      or any substantial part of it, in source or compiled form;
+   b) modify, adapt, translate or create derivative works based on the Platform;
+   c) build, publish or commercialise a product, website or application that
+      reproduces or imitates the Platform's distinctive design, structure,
+      feature set or learning concept, including its combination of lessons,
+      docked slide viewer, interactive labs, gamified progression ("Agent
+      Society", XP levels, achievements, module bosses) and "Urgent Study"
+      sprints;
+   d) sell, sublicense, rent or otherwise make the Platform available to third
+      parties, or use it for any commercial purpose;
+   e) remove or alter any copyright notice, attribution or this licence;
+   f) present the Platform, or any part of it, as your own work.
+
+4. THIRD-PARTY MATERIAL
+   The lecture slides (the slide images derived from them) and the underlying
+   course material of SMEIA305 (ECUE Multiagent systems) belong to their
+   respective authors, the course instructors and Université Côte d'Azur. They
+   are NOT licensed by the Author, are reproduced for educational purposes only,
+   and remain subject to their owners' rights. Open-source dependencies listed
+   in package.json remain under their own licences.
+
+5. CONTRIBUTIONS
+   Suggestions, bug reports and pull requests are welcome. By submitting a
+   contribution you grant the Author a perpetual, worldwide, royalty-free right
+   to use, modify and incorporate it into the Platform.
+
+6. TERMINATION
+   This licence terminates automatically if you breach any of its terms. On
+   termination you must stop using the Platform and delete any copies you hold.
+
+7. NO WARRANTY
+   THE PLATFORM IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+   IMPLIED, INCLUDING BUT NOT LIMITED TO ACCURACY OF THE EDUCATIONAL CONTENT,
+   MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO
+   EVENT SHALL THE AUTHOR BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY
+   ARISING FROM, OUT OF OR IN CONNECTION WITH THE PLATFORM OR ITS USE, INCLUDING
+   ANY EXAM RESULTS.
+
+For permissions beyond this licence, contact the Author through the project
+repository: https://github.com/daniel-ao/MAS_exam

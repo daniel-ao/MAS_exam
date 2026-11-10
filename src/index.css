@@ -1,0 +1,88 @@
+@import "katex/dist/katex.min.css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: #FDFBF7;
+    color: #1E293B;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+}
+
+/* Custom scrollbar for clean study layout */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
+
+/* KaTeX responsive overflow */
+.katex-display {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 0.75rem 0;
+  margin: 0.5rem 0 !important;
+}
+
+
+/* Enter animations (replacement for tailwindcss-animate utilities used across the app) */
+@keyframes mas-fade-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes mas-slide-in-right { from { transform: translateX(24px); opacity: 0; } to { transform: none; opacity: 1; } }
+@keyframes mas-pop-in { 0% { transform: scale(0.92); opacity: 0; } 100% { transform: scale(1); opacity: 1; } }
+@keyframes mas-toast-in { from { transform: translateY(12px); opacity: 0; } to { transform: none; opacity: 1; } }
+@keyframes mas-star-pulse { 0%, 100% { opacity: 0.55; } 50% { opacity: 1; } }
+@keyframes mas-edge-flow { to { stroke-dashoffset: -24; } }
+
+.animate-in { animation-duration: 200ms; animation-timing-function: ease-out; animation-fill-mode: both; }
+.animate-in.fade-in { animation-name: mas-fade-in; }
+.animate-in.slide-in-from-right { animation-name: mas-slide-in-right; }
+.animate-pop-in { animation: mas-pop-in 220ms ease-out both; }
+.animate-toast-in { animation: mas-toast-in 240ms ease-out both; }
+.animate-star-pulse { animation: mas-star-pulse 1.6s ease-in-out infinite; }
+.animate-edge-flow { stroke-dasharray: 6 6; animation: mas-edge-flow 1.2s linear infinite; }
+
+/* Flashcard flip */
+.flip-scene { perspective: 1400px; }
+.flip-card { transition: transform 450ms cubic-bezier(.2,.7,.2,1); transform-style: preserve-3d; display: grid; }
+.flip-card.is-flipped { transform: rotateY(180deg); }
+.flip-face { grid-area: 1 / 1; backface-visibility: hidden; -webkit-backface-visibility: hidden; }
+.flip-back { transform: rotateY(180deg); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 1ms !important; animation-iteration-count: 1 !important; transition-duration: 1ms !important; }
+}
+
+.no-scrollbar { scrollbar-width: none; }
+.no-scrollbar::-webkit-scrollbar { display: none; }
+
+/* Cheat sheets: print only the sheets, keep cards whole */
+@media print {
+  body * { visibility: hidden; }
+  #cheatsheet-print, #cheatsheet-print *, #examsheet-print, #examsheet-print * { visibility: visible; }
+  #cheatsheet-print, #examsheet-print { position: absolute; inset: 0 auto auto 0; width: 100%; }
+  .cheatsheet-card { break-inside: avoid; box-shadow: none; }
+}
+.cheatsheet-card span.inline-block:has(> .katex) { max-width: 100%; overflow-x: auto; overflow-y: hidden; vertical-align: middle; }
+
+/* Exam sheet: one A4 page per side, 3 dense columns */
+@media print {
+  @page { size: A4; margin: 7mm; }
+  #examsheet-print { display: block; }
+  #examsheet-print > * + * { margin-top: 0 !important; }
+  .examsheet-page { break-after: page; border: none; border-radius: 0; padding: 0; box-shadow: none; }
+  .examsheet-page:last-child { break-after: auto; }
+  .examsheet-cols { column-count: 3 !important; column-gap: 4mm; font-size: 7.2pt; line-height: 1.22; }
+  .examsheet-cols h3 { font-size: 7pt; }
+  .examsheet-cols .katex { font-size: 1em; }
+}
